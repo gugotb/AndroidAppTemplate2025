@@ -31,7 +31,7 @@ import kotlinx.coroutines.CoroutineStart
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
-
+    private lateinit var nomeEditText: EditText
     private lateinit var enderecoEditText: EditText
     private lateinit var itemImageView: ImageView
     private var imageUri: Uri? = null
@@ -131,10 +131,12 @@ class DashboardFragment : Fragment() {
 
             if (bytes != null) {
                 val base64Image = Base64.encodeToString(bytes, Base64.DEFAULT)
+                val nome = nomeEditText.text.toString().trim()
                 val endereco = enderecoEditText.text.toString().trim()
+                val contato = contatoEditText
                 //TODO("Capture aqui o conteudo que esta nos outros editTexts que foram criados")
 
-                val item = Item(endereco, base64Image)
+                val item = Item(nomendereco, base64Image)
 
                 saveItemIntoDatabase(item)
             }
