@@ -70,8 +70,10 @@ class DashboardFragment : Fragment() {
         itemImageView = view.findViewById(R.id.image_item)
         salvarButton = view.findViewById(R.id.salvarItemButton)
         selectImageButton = view.findViewById(R.id.button_select_image)
+        nomeEditText = view.findViewById(R.id.nomeItemEditText)
         enderecoEditText = view.findViewById(R.id.enderecoItemEditText)
-        //TODO("Capture aqui os outro campos que foram inseridos no layout. Por exemplo, ate
+        contatoEditText = view.findViewById(R.id.contatoItemEditText)
+        //TODO("Capture aqui ou acima os outro campos que foram inseridos no layout. Por exemplo, ate
         // o momento so foi capturado o endereco (EditText)")
 
         auth = FirebaseAuth.getInstance()
@@ -112,8 +114,10 @@ class DashboardFragment : Fragment() {
     }
 
     private fun salvarItem() {
-        //TODO("Capture aqui o conteudo que esta nos outros editTexts que foram criados")
+        //TODO("Capture aqui ou abaixo conteudo que esta nos outros editTexts que foram criados")
+        val nome = nomeEditText.text.toString().trim()
         val endereco = enderecoEditText.text.toString().trim()
+        val contato = contatoEditText.text.toString().trim()
 
         if (endereco.isEmpty() || imageUri == null) {
             Toast.makeText(context, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT)
