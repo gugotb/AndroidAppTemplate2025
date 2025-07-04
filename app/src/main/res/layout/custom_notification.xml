@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
@@ -21,4 +22,17 @@
         android:progress="33"
         android:max="100"
         android:progressDrawable="@drawable/progress_bar_drawable" />
+
+    <ImageView
+        android:id="@+id/image_item"
+        android:layout_width="165dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="Store Photo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_notifications_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard" />
 </LinearLayout>
